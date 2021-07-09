@@ -22,7 +22,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p9t0olkj30cb09nt8n.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9pcc136oj30m30kfavw.jpg">
 <meta property="article:published_time" content="2021-07-08T14:14:06.686Z">
-<meta property="article:modified_time" content="2021-07-09T07:16:41.256Z">
+<meta property="article:modified_time" content="2021-07-09T07:21:58.311Z">
 <meta property="article:author" content="Ajoy_Blog">
 <meta property="article:tag" content="单片机菜鸡、嵌入式不嵌">
 <meta name="twitter:card" content="summary">
@@ -183,36 +183,54 @@
       
         <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="二、移动鼠标，获取图像信息"><a href="#二、移动鼠标，获取图像信息" class="headerlink" title="二、移动鼠标，获取图像信息"></a>二、移动鼠标，获取图像信息</h3><span id="more"></span>
 
-<h5 id="1-、添加函数"><a href="#1-、添加函数" class="headerlink" title="1)、添加函数"></a>1)、添加函数</h5><blockquote>
+<h5 id="1-、添加函数"><a href="#1-、添加函数" class="headerlink" title="1)、添加函数"></a>1)、添加函数</h5><ul>
+<li><h6 id="右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，"><a href="#右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，" class="headerlink" title="右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，"></a>右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，</h6></li>
+</ul>
+<blockquote>
 <ul>
-<li><h6 id="右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，"><a href="#右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，" class="headerlink" title="右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，"></a>右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，</h6><h6 id="OnMouseMove-UINT-nFlags-CPoint-point"><a href="#OnMouseMove-UINT-nFlags-CPoint-point" class="headerlink" title="OnMouseMove(UINT nFlags, CPoint point)"></a>OnMouseMove(UINT nFlags, CPoint point)</h6><blockquote>
+<li><h6 id="OnMouseMove-UINT-nFlags-CPoint-point"><a href="#OnMouseMove-UINT-nFlags-CPoint-point" class="headerlink" title="OnMouseMove(UINT nFlags, CPoint point)"></a>OnMouseMove(UINT nFlags, CPoint point)</h6></li>
+</ul>
+</blockquote>
+<blockquote>
+<blockquote>
 <p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p54f96yj30mi0llwfh.jpg" alt="1.png"></p>
 </blockquote>
-</li>
-<li><h6 id="修改VIew-cpp代码"><a href="#修改VIew-cpp代码" class="headerlink" title="修改VIew.cpp代码"></a>修改VIew.cpp代码</h6><blockquote>
-<figure class="highlight plaintext"><figcaption><span>Cajoy284View::OnMouseMove(UINT nFlags, CPoint point)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">  &gt;&#123;</span><br><span class="line">// TODO: 在此添加消息处理程序代码和/或调用默认值</span><br><span class="line">RGB rgb; </span><br><span class="line">HSI hsi; </span><br><span class="line">CString str; </span><br><span class="line">HDC hDC = ::GetDC(NULL);</span><br><span class="line">COLORREF val = ::GetPixel(hDC, point.x, point.y);</span><br><span class="line">unsigned char* lpSrc;</span><br><span class="line">//m_pImage[posin + 2], m_pImage[posin + 1], m_pImage[posin]</span><br><span class="line">if ((point.x &gt; 0) &amp;&amp; (point.x &lt; m_nWidth) &amp;&amp; (point.y &gt; 0) &amp;&amp; (point.y &lt; m_nHeight))</span><br><span class="line">&#123;</span><br><span class="line">	if (m_nBitCount == 8) &#123;</span><br><span class="line">		lpSrc = m_pImage + m_nLineByte * (m_nHeight - 1 - point.y) + point.x;</span><br><span class="line">		str.Format(TEXT(&quot;(x=%d y=%d)=%d&quot;), point.x, point.y, *lpSrc);</span><br><span class="line">	&#125;</span><br><span class="line">	if (m_nBitCount == 24)</span><br><span class="line">	&#123;</span><br><span class="line">		lpSrc = m_pImage + lLineBytes * (lHeight - 1 - point.y) + point.x * 3;</span><br><span class="line">		rgb.b = *lpSrc;</span><br><span class="line">		rgb.g = *(lpSrc + 1);</span><br><span class="line">		rgb.r = *(lpSrc + 2);</span><br><span class="line">		RgbtoHsi(&amp;rgb, &amp;hsi);</span><br><span class="line">		int gray = (int)(0.114 * rgb.r + 0.587 * rgb.g + 0.299 * rgb.b);        //灰度</span><br><span class="line">		str.Format((&quot;Pos(%d %d) RGB(%d %d %d) Gray(%d) HSI(%4.1f %3.2f %3.2f--%d %d %d)&quot;), </span><br><span class="line">			point.x, point.y, rgb.r, rgb.g, rgb.b, gray, hsi.Hue, hsi.Saturation, hsi.Intensity,</span><br><span class="line">			(int)(hsi.Hue * 255.0 / 360), (int)(hsi.Saturation * 255.0), (int)(hsi.Intensity * 255.0));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	((CMainFrame*)AfxGetMainWnd())-&gt;m_wndStatusBar.SetPaneText(0, str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CView::OnMouseMove(nFlags, point);</span><br><span class="line">  &gt;&#125;</span><br><span class="line">  </span><br><span class="line">&gt;* ###### View.h添加标识符定义</span><br><span class="line"></span><br><span class="line"> &gt;``` 	</span><br><span class="line">struct  RGB</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char b;</span><br><span class="line">	unsigned char g;</span><br><span class="line">	unsigned char r;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct HSI</span><br><span class="line">&#123;</span><br><span class="line">	double	Hue;</span><br><span class="line">	double	Saturation;</span><br><span class="line">	double	Intensity;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><h6 id="VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码"><a href="#VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码" class="headerlink" title="VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码"></a>VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码</h6><blockquote>
-<p>``` void Cajoy284View::RgbtoHsi(RGB* pRgb, HSI* pHsi)<br>{</p>
-<pre><code>// TODO: 在此处添加实现代码.
-int p;
-p = (pRgb-&gt;r &lt; pRgb-&gt;g) ? pRgb-&gt;r : pRgb-&gt;g;
-p = (pRgb-&gt;b &lt; p) ? pRgb-&gt;b : p;
-
-pHsi-&gt;Intensity = ((double)(pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b)) / 255.0 / 3;
-pHsi-&gt;Saturation = 1 - 3.0 / (pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b) * p;
-if (pRgb-&gt;g &gt;= pRgb-&gt;b)
-    pHsi-&gt;Hue = 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
-else
-    pHsi-&gt;Hue = 360 - 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
-
-return;
-</code></pre>
-<p>}</p>
 </blockquote>
-</li>
+<ul>
+<li><h6 id="修改VIew-cpp代码"><a href="#修改VIew-cpp代码" class="headerlink" title="修改VIew.cpp代码"></a>修改VIew.cpp代码</h6></li>
+</ul>
+<blockquote>
+<blockquote>
+<figure class="highlight plaintext"><figcaption><span>Cajoy284View::OnMouseMove(UINT nFlags, CPoint point)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">&gt;&#123;</span><br><span class="line">// TODO: 在此添加消息处理程序代码和/或调用默认值</span><br><span class="line">RGB rgb; </span><br><span class="line">HSI hsi; </span><br><span class="line">CString str; </span><br><span class="line">HDC hDC = ::GetDC(NULL);</span><br><span class="line">COLORREF val = ::GetPixel(hDC, point.x, point.y);</span><br><span class="line">unsigned char* lpSrc;</span><br><span class="line">//m_pImage[posin + 2], m_pImage[posin + 1], m_pImage[posin]</span><br><span class="line">if ((point.x &gt; 0) &amp;&amp; (point.x &lt; m_nWidth) &amp;&amp; (point.y &gt; 0) &amp;&amp; (point.y &lt; m_nHeight))</span><br><span class="line">&#123;</span><br><span class="line">	if (m_nBitCount == 8) &#123;</span><br><span class="line">		lpSrc = m_pImage + m_nLineByte * (m_nHeight - 1 - point.y) + point.x;</span><br><span class="line">		str.Format(TEXT(&quot;(x=%d y=%d)=%d&quot;), point.x, point.y, *lpSrc);</span><br><span class="line">	&#125;</span><br><span class="line">	if (m_nBitCount == 24)</span><br><span class="line">	&#123;</span><br><span class="line">		lpSrc = m_pImage + lLineBytes * (lHeight - 1 - point.y) + point.x * 3;</span><br><span class="line">		rgb.b = *lpSrc;</span><br><span class="line">		rgb.g = *(lpSrc + 1);</span><br><span class="line">		rgb.r = *(lpSrc + 2);</span><br><span class="line">		RgbtoHsi(&amp;rgb, &amp;hsi);</span><br><span class="line">		int gray = (int)(0.114 * rgb.r + 0.587 * rgb.g + 0.299 * rgb.b);        //灰度</span><br><span class="line">		str.Format((&quot;Pos(%d %d) RGB(%d %d %d) Gray(%d) HSI(%4.1f %3.2f %3.2f--%d %d %d)&quot;), </span><br><span class="line">			point.x, point.y, rgb.r, rgb.g, rgb.b, gray, hsi.Hue, hsi.Saturation, hsi.Intensity,</span><br><span class="line">			(int)(hsi.Hue * 255.0 / 360), (int)(hsi.Saturation * 255.0), (int)(hsi.Intensity * 255.0));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	((CMainFrame*)AfxGetMainWnd())-&gt;m_wndStatusBar.SetPaneText(0, str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CView::OnMouseMove(nFlags, point);</span><br><span class="line">&gt;&#125;</span><br><span class="line"></span><br><span class="line">* ###### View.h添加标识符定义</span><br><span class="line"></span><br><span class="line"> &gt;``` 	</span><br><span class="line">struct  RGB</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char b;</span><br><span class="line">	unsigned char g;</span><br><span class="line">	unsigned char r;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct HSI</span><br><span class="line">&#123;</span><br><span class="line">	double	Hue;</span><br><span class="line">	double	Saturation;</span><br><span class="line">	double	Intensity;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<ul>
+<li><h6 id="VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码"><a href="#VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码" class="headerlink" title="VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码"></a>VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码</h6></li>
+</ul>
+<blockquote>
+<blockquote>
+<pre><code class="void">&#123;
+    // TODO: 在此处添加实现代码.
+    int p;
+    p = (pRgb-&gt;r &lt; pRgb-&gt;g) ? pRgb-&gt;r : pRgb-&gt;g;
+    p = (pRgb-&gt;b &lt; p) ? pRgb-&gt;b : p;
+
+    pHsi-&gt;Intensity = ((double)(pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b)) / 255.0 / 3;
+    pHsi-&gt;Saturation = 1 - 3.0 / (pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b) * p;
+    if (pRgb-&gt;g &gt;= pRgb-&gt;b)
+        pHsi-&gt;Hue = 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
+    else
+        pHsi-&gt;Hue = 360 - 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
+
+    return;
+&#125;
+</code></pre>
+</blockquote>
+</blockquote>
+<ul>
 <li><h6 id="View-h添加函数声明"><a href="#View-h添加函数声明" class="headerlink" title="View.h添加函数声明"></a>View.h添加函数声明</h6></li>
 </ul>
+<blockquote>
 <blockquote>
 <pre><code class="virtual">   afx_msg void OnMouseMove(UINT nFlags, CPoint point);
    void Cajoy284View::RgbtoHsi(RGB* pRgb, HSI* pHsi);
