@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n41b42xj30lu0f5myc.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n41dvfdj30m60kgtuo.jpg">
 <meta property="article:published_time" content="2021-07-08T14:14:06.684Z">
-<meta property="article:modified_time" content="2021-07-09T12:26:01.283Z">
+<meta property="article:modified_time" content="2021-07-09T12:32:14.103Z">
 <meta property="article:author" content="Ajoy_Blog">
 <meta property="article:tag" content="单片机菜鸡、嵌入式不嵌">
 <meta name="twitter:card" content="summary">
@@ -245,13 +245,12 @@
 <li><h6 id="修改…Doc-cpp"><a href="#修改…Doc-cpp" class="headerlink" title="修改…Doc.cpp"></a>修改…Doc.cpp</h6></li>
 </ul>
 <blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;void Cajoy284Doc::Serialize(CArchive&amp; ar)</span><br><span class="line">&gt;&#123;</span><br><span class="line">if (ar.IsStoring())</span><br><span class="line">&#123;</span><br><span class="line">	// TODO: 在此添加存储代码</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">	// TODO: 在此添加加载代码</span><br><span class="line">&#125;</span><br><span class="line">m_pDib-&gt;Serialize(ar);</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Cajoy284Doc::<span class="built_in">Cajoy284Doc</span>() <span class="keyword">noexcept</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span> 在此添加一次性构造代码</span></span><br><span class="line">	m_pDib = <span class="keyword">new</span> CDib;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;Cajoy284Doc::<span class="built_in">Cajoy284Doc</span>() <span class="keyword">noexcept</span></span><br><span class="line">&gt;&#123;</span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 在此添加一次性构造代码</span></span><br><span class="line">m_pDib = <span class="keyword">new</span> CDib;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Cajoy284Doc::~<span class="built_in">Cajoy284Doc</span>()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">delete</span> m_pDib;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </blockquote>
 <blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;Cajoy284Doc::~<span class="built_in">Cajoy284Doc</span>()</span><br><span class="line">&gt;&#123;</span><br><span class="line"><span class="keyword">delete</span> m_pDib;</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
