@@ -174,75 +174,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="二、移动鼠标，获取图像信息"><a href="#二、移动鼠标，获取图像信息" class="headerlink" title="二、移动鼠标，获取图像信息"></a>二、移动鼠标，获取图像信息</h3><h5 id="1-、添加函数"><a href="#1-、添加函数" class="headerlink" title="1)、添加函数"></a>1)、添加函数</h5><blockquote>
-<ul>
-<li><h6 id="右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，"><a href="#右键工程，类向导，消息，VM-MOUSEMOVE，添加处理程序，" class="headerlink" title="右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，"></a>右键工程，类向导，消息，VM_MOUSEMOVE，添加处理程序，</h6><h6 id="OnMouseMove-UINT-nFlags-CPoint-point"><a href="#OnMouseMove-UINT-nFlags-CPoint-point" class="headerlink" title="OnMouseMove(UINT nFlags, CPoint point)"></a>OnMouseMove(UINT nFlags, CPoint point)</h6><blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p54f96yj30mi0llwfh.jpg" alt="1.png"></p>
-</blockquote>
-</li>
-<li><h6 id="修改VIew-cpp代码"><a href="#修改VIew-cpp代码" class="headerlink" title="修改VIew.cpp代码"></a>修改VIew.cpp代码</h6><blockquote>
-<figure class="highlight plaintext"><figcaption><span>Cajoy284View::OnMouseMove(UINT nFlags, CPoint point)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">  &gt;&#123;</span><br><span class="line">// TODO: 在此添加消息处理程序代码和/或调用默认值</span><br><span class="line">RGB rgb; </span><br><span class="line">HSI hsi; </span><br><span class="line">CString str; </span><br><span class="line">HDC hDC = ::GetDC(NULL);</span><br><span class="line">COLORREF val = ::GetPixel(hDC, point.x, point.y);</span><br><span class="line">unsigned char* lpSrc;</span><br><span class="line">//m_pImage[posin + 2], m_pImage[posin + 1], m_pImage[posin]</span><br><span class="line">if ((point.x &gt; 0) &amp;&amp; (point.x &lt; m_nWidth) &amp;&amp; (point.y &gt; 0) &amp;&amp; (point.y &lt; m_nHeight))</span><br><span class="line">&#123;</span><br><span class="line">	if (m_nBitCount == 8) &#123;</span><br><span class="line">		lpSrc = m_pImage + m_nLineByte * (m_nHeight - 1 - point.y) + point.x;</span><br><span class="line">		str.Format(TEXT(&quot;(x=%d y=%d)=%d&quot;), point.x, point.y, *lpSrc);</span><br><span class="line">	&#125;</span><br><span class="line">	if (m_nBitCount == 24)</span><br><span class="line">	&#123;</span><br><span class="line">		lpSrc = m_pImage + lLineBytes * (lHeight - 1 - point.y) + point.x * 3;</span><br><span class="line">		rgb.b = *lpSrc;</span><br><span class="line">		rgb.g = *(lpSrc + 1);</span><br><span class="line">		rgb.r = *(lpSrc + 2);</span><br><span class="line">		RgbtoHsi(&amp;rgb, &amp;hsi);</span><br><span class="line">		int gray = (int)(0.114 * rgb.r + 0.587 * rgb.g + 0.299 * rgb.b);        //灰度</span><br><span class="line">		str.Format((&quot;Pos(%d %d) RGB(%d %d %d) Gray(%d) HSI(%4.1f %3.2f %3.2f--%d %d %d)&quot;), </span><br><span class="line">			point.x, point.y, rgb.r, rgb.g, rgb.b, gray, hsi.Hue, hsi.Saturation, hsi.Intensity,</span><br><span class="line">			(int)(hsi.Hue * 255.0 / 360), (int)(hsi.Saturation * 255.0), (int)(hsi.Intensity * 255.0));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	((CMainFrame*)AfxGetMainWnd())-&gt;m_wndStatusBar.SetPaneText(0, str);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CView::OnMouseMove(nFlags, point);</span><br><span class="line">  &gt;&#125;</span><br><span class="line">  </span><br><span class="line">&gt;* ###### View.h添加标识符定义</span><br><span class="line"></span><br><span class="line"> &gt;``` 	</span><br><span class="line">struct  RGB</span><br><span class="line">&#123;</span><br><span class="line">	unsigned char b;</span><br><span class="line">	unsigned char g;</span><br><span class="line">	unsigned char r;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">struct HSI</span><br><span class="line">&#123;</span><br><span class="line">	double	Hue;</span><br><span class="line">	double	Saturation;</span><br><span class="line">	double	Intensity;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></blockquote>
-</li>
-<li><h6 id="VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码"><a href="#VIew-cpp-添加RgbtoHsi-RGB-pRgb-HSI-pHsi-代码" class="headerlink" title="VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码"></a>VIew.cpp 添加RgbtoHsi(RGB* pRgb, HSI* pHsi)代码</h6><blockquote>
-<p>``` void Cajoy284View::RgbtoHsi(RGB* pRgb, HSI* pHsi)<br>{</p>
-<pre><code>// TODO: 在此处添加实现代码.
-int p;
-p = (pRgb-&gt;r &lt; pRgb-&gt;g) ? pRgb-&gt;r : pRgb-&gt;g;
-p = (pRgb-&gt;b &lt; p) ? pRgb-&gt;b : p;
-
-pHsi-&gt;Intensity = ((double)(pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b)) / 255.0 / 3;
-pHsi-&gt;Saturation = 1 - 3.0 / (pRgb-&gt;r + pRgb-&gt;g + pRgb-&gt;b) * p;
-if (pRgb-&gt;g &gt;= pRgb-&gt;b)
-    pHsi-&gt;Hue = 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
-else
-    pHsi-&gt;Hue = 360 - 180.0 / 3.14159 * acos(((double)(pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b)) / 2 / sqrt((double)(pRgb-&gt;r - pRgb-&gt;g) * (pRgb-&gt;r - pRgb-&gt;g) + (pRgb-&gt;r - pRgb-&gt;b) * (pRgb-&gt;g - pRgb-&gt;b)));
-
-return;
-</code></pre>
-<p>}</p>
-</blockquote>
-</li>
-<li><h6 id="View-h添加函数声明"><a href="#View-h添加函数声明" class="headerlink" title="View.h添加函数声明"></a>View.h添加函数声明</h6></li>
-</ul>
-<blockquote>
-<pre><code class="virtual">   afx_msg void OnMouseMove(UINT nFlags, CPoint point);
-   void Cajoy284View::RgbtoHsi(RGB* pRgb, HSI* pHsi);
-</code></pre>
-</blockquote>
-</blockquote>
-<h4 id="2-、调试报错解决"><a href="#2-、调试报错解决" class="headerlink" title="2)、调试报错解决"></a>2)、调试报错解决</h4><blockquote>
-<ul>
-<li><h6 id="报错形式"><a href="#报错形式" class="headerlink" title="报错形式"></a>报错形式</h6><blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p70ak32j30qs0193yf.jpg" alt="2.png"></p>
-</blockquote>
-</li>
-<li><h6 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h6><blockquote>
-<p>View.cpp添加头文件 #include “MainFrm.h”</p>
-<p>```#include “ajoy284Doc.h”<br>#include “ajoy284View.h”<br>#include “MainFrm.h”</p>
-</blockquote>
-</li>
-<li><h6 id="报错形式-1"><a href="#报错形式-1" class="headerlink" title="报错形式"></a>报错形式</h6></li>
-</ul>
-<blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p8n2atsj30q7014wed.jpg" alt="3.png"></p>
-</blockquote>
-<ul>
-<li><h6 id="解决办法-1"><a href="#解决办法-1" class="headerlink" title="解决办法"></a>解决办法</h6></li>
-</ul>
-<blockquote>
-<p>右键该成员，转到定义</p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p8yyo4kj30gl051jrh.jpg" alt="4.png"></p>
-<p>将该成员改为公有</p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9p9t0olkj30cb09nt8n.jpg" alt="5.png"></p>
-</blockquote>
-</blockquote>
-<h4 id="3-、调试运行"><a href="#3-、调试运行" class="headerlink" title="3)、调试运行"></a>3)、调试运行</h4><blockquote>
-<ul>
-<li>图片左下角显示图像相关参数</li>
-</ul>
-<p> <img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9pcc136oj30m30kfavw.jpg" alt="6.png"></p>
-</blockquote>
-
+        <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="二、移动鼠标，获取图像信息"><a href="#二、移动鼠标，获取图像信息" class="headerlink" title="二、移动鼠标，获取图像信息"></a>二、移动鼠标，获取图像信息</h3>
+        
+          <a class="article-more-a" href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%862/#more">more >></a>
+        
       
 
       
@@ -289,110 +224,10 @@ return;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="一、打开图像"><a href="#一、打开图像" class="headerlink" title="一、打开图像"></a>一、打开图像</h3><h4 id="1-、新建vs2019项目（如下图）"><a href="#1-、新建vs2019项目（如下图）" class="headerlink" title="1)、新建vs2019项目（如下图）"></a>1)、新建vs2019项目（如下图）</h4><p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n413sqnj30sj0ixjsa.jpg" alt="avatar"></p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n416487j30sj0j10tv.jpg" alt="avatar"></p>
-<h4 id="2-、代码修改"><a href="#2-、代码修改" class="headerlink" title="2)、代码修改"></a>2)、代码修改</h4><h5 id="1-添加cdib-h-cdib-cpp文件"><a href="#1-添加cdib-h-cdib-cpp文件" class="headerlink" title="1.添加cdib.h cdib.cpp文件"></a>1.添加cdib.h cdib.cpp文件</h5><blockquote>
-<ul>
-<li><h6 id="先将文件复制到工程文件夹内"><a href="#先将文件复制到工程文件夹内" class="headerlink" title="先将文件复制到工程文件夹内"></a>先将文件复制到工程文件夹内</h6><blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n417giyj30ec0chq3g.jpg" alt="avatar"></p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h5 id="2-代码移植"><a href="#2-代码移植" class="headerlink" title="2.代码移植"></a>2.代码移植</h5><blockquote>
-<ul>
-<li><h6 id="修改cdib-cpp-头文件命令"><a href="#修改cdib-cpp-头文件命令" class="headerlink" title="修改cdib.cpp 头文件命令"></a>修改cdib.cpp 头文件命令</h6></li>
-</ul>
-<blockquote>
-<figure class="highlight plaintext"><figcaption><span>#include "stdafx.h"</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;pch.h&quot;</span><br><span class="line">   #include &quot;cdib.h&quot;</span><br><span class="line"></span><br><span class="line">&gt;* ###### 修改...Doc.h 头文件命令</span><br><span class="line"></span><br><span class="line">``` #pragma once</span><br><span class="line">#include &quot;cdib.h&quot;</span><br><span class="line"></span><br><span class="line">``` // 特性</span><br><span class="line">public:</span><br><span class="line">	CDib* m_pDib;</span><br><span class="line"></span><br><span class="line">* ###### 修改...Doc.cpp </span><br><span class="line"></span><br><span class="line">``` Cajoy284Doc::Cajoy284Doc() noexcept</span><br><span class="line">&#123;</span><br><span class="line">	// TODO: 在此添加一次性构造代码</span><br><span class="line">	m_pDib = new CDib;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">``` Cajoy284Doc::~Cajoy284Doc()</span><br><span class="line">&#123;</span><br><span class="line">	delete m_pDib;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">``` void Cajoy284Doc::Serialize(CArchive&amp; ar)</span><br><span class="line">&#123;</span><br><span class="line">	if (ar.IsStoring())</span><br><span class="line">	&#123;</span><br><span class="line">		// TODO: 在此添加存储代码</span><br><span class="line">	&#125;</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		// TODO: 在此添加加载代码</span><br><span class="line">	&#125;</span><br><span class="line">	m_pDib-&gt;Serialize(ar);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">* ###### 修改VIew.cpp代码</span><br><span class="line"></span><br><span class="line">``` void Cajoy284View::OnDraw(CDC* pDC)</span><br><span class="line">&#123;</span><br><span class="line">	Cajoy284Doc* pDoc = GetDocument();</span><br><span class="line">	ASSERT_VALID(pDoc);</span><br><span class="line">	if (!pDoc)</span><br><span class="line">		return;</span><br><span class="line"></span><br><span class="line">	// TODO: 在此处为本机数据添加绘制代码</span><br><span class="line">	CSize size;</span><br><span class="line">	if (pDoc-&gt;m_pDib-&gt;m_lpBMIH != NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		lHeight = pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biHeight;</span><br><span class="line">		lWidth = pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biWidth;</span><br><span class="line">		lDrawHeight = pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biHeight;</span><br><span class="line">		lDrawWidth = pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biWidth;</span><br><span class="line">		lBitCount = pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biBitCount;   //每个像素所占位数  </span><br><span class="line">										//计算图像每行像素所占的字节数（必须是32的倍数）  </span><br><span class="line">		lLineBytes = (lWidth * lBitCount + 31) / 32 * 4; //修改处</span><br><span class="line"></span><br><span class="line">		lImage = lLineBytes * lHeight;</span><br><span class="line">		//位图实际使用的颜色表中的颜色数 biClrUsed  </span><br><span class="line">		lPalette = 0;                       //初始化  </span><br><span class="line">		if (pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biClrUsed)</span><br><span class="line">			pDoc-&gt;m_pDib-&gt;m_lpBMIH-&gt;biClrUsed;</span><br><span class="line">		//申请位图空间 大小为位图大小 m_nImage   </span><br><span class="line">		m_pImage = pDoc-&gt;m_pDib-&gt;m_lpImage;</span><br><span class="line"></span><br><span class="line">		StartPoint.x = 0;</span><br><span class="line">		EndPoint.x = lWidth - 1;</span><br><span class="line">		StartPoint.y = 0;</span><br><span class="line">		EndPoint.y = lHeight - 1;</span><br><span class="line"></span><br><span class="line">		size.cy = m_nHeight;</span><br><span class="line">		size.cx = m_nWidth;</span><br><span class="line">		pDoc-&gt;m_pDib-&gt;Draw(pDC, CPoint(0, 0), size);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li><h6 id="添加OnInitialUpdate-函数"><a href="#添加OnInitialUpdate-函数" class="headerlink" title="添加OnInitialUpdate()函数"></a>添加OnInitialUpdate()函数</h6></li>
-</ul>
-<blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n417ntfj30mj0lgmy2.jpg" alt="avatar"></p>
-</blockquote>
-<blockquote>
-<pre><code class="void">&#123;
-    CView::OnInitialUpdate();
-
-    // TODO: 在此添加专用代码和/或调用基类
-    Cajoy284Doc* pDoc = GetDocument();
-    if (pDoc-&gt;m_pDib-&gt;m_lpBMIH == NULL)
-    &#123;
-        CString m_fileName;
-        CHAR strDirName[80];
-        GetCurrentDirectory(80, (LPSTR)strDirName);
-        CString pathName;
-        pathName.Format(_T(&quot;%s&quot;), strDirName);
-        m_fileName = pathName + &quot;//Blood.bmp&quot;;
-        CFile file;
-        if (file.Open(m_fileName, CFile::modeRead | CFile::shareDenyWrite, NULL))
-        &#123;
-            pDoc-&gt;m_pDib-&gt;Read(&amp;file);
-            file.Close();
-            pDoc-&gt;SetTitle(&quot;Blood&quot;);
-            pDoc-&gt;SetPathName(m_fileName); //if not cannot get pDoc-&gt;GetPathName
-        &#125;
-    &#125;
-&#125;
-</code></pre>
-</blockquote>
-<ul>
-<li><h6 id="View-h添加标识符声明"><a href="#View-h添加标识符声明" class="headerlink" title="View.h添加标识符声明"></a>View.h添加标识符声明</h6></li>
-</ul>
-<blockquote>
-<pre><code class="//">protected:
-    DECLARE_MESSAGE_MAP()
-public:
-    CPoint StartPoint;
-    CPoint EndPoint;
-    CPoint m_LastPoint;
-
-    int lWidth;       //图像实际宽度  
-    int lHeight;      //图像实际高度  
-    int lDrawWidth;   //图像显示宽度  
-    int lDrawHeight;  //图像显示高度  
-    DWORD lImage;     //图像数据的字节数 只含位图  
-    DWORD lSize;      //图像文件大小  
-    int lLineBytes;    //图像一行所占字节数  
-    int lBitCount;    //图像每个像素所占位数  
-    int lPalette;     //位图实际使用的颜色表中的颜色数  
-    BYTE* m_pImage;         //读入图片数据后的指针
-
-    virtual void OnInitialUpdate();
-&#125;;
-</code></pre>
-</blockquote>
-</blockquote>
-<h4 id="3-、调试报错解决"><a href="#3-、调试报错解决" class="headerlink" title="3)、调试报错解决"></a>3)、调试报错解决</h4><blockquote>
-<ul>
-<li><h6 id="报错形式"><a href="#报错形式" class="headerlink" title="报错形式"></a>报错形式</h6><blockquote>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9nigxh4oj30pv0atdhf.jpg" alt="10.png"></p>
-</blockquote>
-</li>
-<li><h6 id="修改办法"><a href="#修改办法" class="headerlink" title="修改办法"></a>修改办法</h6><blockquote>
-<p>右键工程，点击属性</p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n41b5cuj60fq0jvgmi02.jpg" alt="avatar"></p>
-<p>配置属性，高级，字符集</p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n41b42xj30lu0f5myc.jpg" alt="avatar"></p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<h4 id="4-、添加图片"><a href="#4-、添加图片" class="headerlink" title="4)、添加图片"></a>4)、添加图片</h4><blockquote>
-<ul>
-<li>将Blood.bmp图片复制粘贴到工程文件夹中</li>
-</ul>
-</blockquote>
-<h4 id="5-、调试运行"><a href="#5-、调试运行" class="headerlink" title="5)、调试运行"></a>5)、调试运行</h4><blockquote>
-<ul>
-<li><p>自动加载图片</p>
-<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9n41dvfdj30m60kgtuo.jpg" alt="avatar"></p>
-</li>
-</ul>
-</blockquote>
-
+        <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="一、打开图像"><a href="#一、打开图像" class="headerlink" title="一、打开图像"></a>一、打开图像</h3>
+        
+          <a class="article-more-a" href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%861/#more">more >></a>
+        
       
 
       
