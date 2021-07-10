@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ajoy2330.github.io">
-  <title>Archives: 2021/7 | Ajoy_Blog</title>
+  <title>细胞处理4 | Ajoy_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="埋头苦干，干就完了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ajoy_Blog">
-<meta property="og:url" content="https://ajoy2330.github.io/archives/2021/07/index.html">
+  <meta name="description" content="细胞处理四、二值化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="细胞处理4">
+<meta property="og:url" content="https://ajoy2330.github.io/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/index.html">
 <meta property="og:site_name" content="Ajoy_Blog">
-<meta property="og:description" content="埋头苦干，干就完了">
+<meta property="og:description" content="细胞处理四、二值化">
 <meta property="og:locale" content="zh_CH">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9t0m18v5j30ly0kdq43.jpg">
+<meta property="article:published_time" content="2021-07-10T03:17:06.560Z">
+<meta property="article:modified_time" content="2021-07-10T03:17:06.561Z">
 <meta property="article:author" content="Ajoy_Blog">
 <meta property="article:tag" content="单片机菜鸡、嵌入式不嵌">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9t0m18v5j30ly0kdq43.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Ajoy_Blog" type="application/atom+xml">
   
@@ -167,157 +171,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-细胞处理4" class="article article-type-post " itemscope itemprop="blogPost">
+<div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      细胞处理4
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/" class="archive-article-date">
+
+	<!--显示阅读次数-->
+	
+ 	 <br/>
+  	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+ 	 <span class="icon-sort"></span>
+  	<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+    	        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+ 	 </span>
+  	</a>
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/" class="archive-article-date">
   	<time datetime="2021-07-10T03:17:06.560Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/">细胞处理4</a>
-    </h1>
-  
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+       	 
+       	 <!-- 添加完成 -->
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="细胞处理"><a href="#细胞处理" class="headerlink" title="细胞处理"></a>细胞处理</h1><h3 id="四、二值化"><a href="#四、二值化" class="headerlink" title="四、二值化"></a>四、二值化</h3><span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="1-、建立菜单，二值化选项"><a href="#1-、建立菜单，二值化选项" class="headerlink" title="1)、建立菜单，二值化选项"></a>1)、建立菜单，二值化选项</h4><blockquote>
+<ul>
+<li><h6 id="与三、1-、相同操作"><a href="#与三、1-、相同操作" class="headerlink" title="与三、1)、相同操作"></a>与三、1)、相同操作</h6></li>
+</ul>
+</blockquote>
+<h4 id="2-、代码补充"><a href="#2-、代码补充" class="headerlink" title="2)、代码补充"></a>2)、代码补充</h4><ul>
+<li><h6 id="修改VIew-cpp代码"><a href="#修改VIew-cpp代码" class="headerlink" title="修改VIew.cpp代码"></a>修改VIew.cpp代码</h6></li>
+</ul>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"><span class="keyword">void</span> <span class="title">Cajoy284View::OnCellprocessTwovalue</span><span class="params">()</span></span></span><br><span class="line"><span class="function">&gt;</span>&#123;</span><br><span class="line"><span class="comment">// <span class="doctag">TODO:</span> 在此添加命令处理程序代码</span></span><br><span class="line">Cajoy284Doc* pDoc = <span class="built_in">GetDocument</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span>* lpSrc;</span><br><span class="line"><span class="comment">// 指向转置图像对应象素的指针</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span>* lpDst;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">int</span> lNewLineBytes = (lWidth + <span class="number">3</span>) / <span class="number">4</span> * <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指向转置图像的指针</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">char</span>* lpNewDIBBits;</span><br><span class="line"><span class="comment">// 暂时分配内存，以保存新图像</span></span><br><span class="line">lpNewDIBBits = <span class="keyword">new</span> <span class="keyword">unsigned</span> <span class="keyword">char</span>[lHeight * lNewLineBytes];</span><br><span class="line"><span class="comment">// 判断是否内存分配失败</span></span><br><span class="line"><span class="keyword">if</span> (lpNewDIBBits == <span class="literal">NULL</span>)</span><br><span class="line">&#123;  <span class="comment">// 分配内存失败</span></span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lHeight; i++)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; lWidth; j++)</span><br><span class="line">	&#123;</span><br><span class="line">		lpSrc = m_pImage + lLineBytes * (lHeight - <span class="number">1</span> - i) + j * <span class="number">3</span>;</span><br><span class="line">		lpDst = lpNewDIBBits + lNewLineBytes * (lHeight - <span class="number">1</span> - i) + j;</span><br><span class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> v;</span><br><span class="line">		v = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (*(lpSrc) == <span class="number">0</span>)<span class="comment">//Mark</span></span><br><span class="line">		&#123;</span><br><span class="line">			v = TWOVALUE_H;</span><br><span class="line">			<span class="keyword">if</span> (*(lpSrc + <span class="number">1</span>))</span><br><span class="line">				v |= EDGEPOINT;<span class="comment">//set edge</span></span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				<span class="keyword">if</span> (j == <span class="number">0</span> || j == lWidth - <span class="number">1</span> || i == <span class="number">0</span> || i == lHeight - <span class="number">1</span>) <span class="comment">// 最边上的</span></span><br><span class="line">					v |= EDGEPOINT;<span class="comment">//set edge</span></span><br><span class="line">		&#125;</span><br><span class="line">		*lpDst = (<span class="keyword">unsigned</span> <span class="keyword">char</span>)v;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">lLineBytes = lNewLineBytes;</span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> 	pDoc-&gt;m_pDib;</span><br><span class="line">pDoc-&gt;m_pDib = <span class="keyword">new</span> <span class="built_in">CDib</span>(<span class="built_in">CSize</span>(lNewLineBytes, lHeight), <span class="number">8</span>);</span><br><span class="line">m_pImage = pDoc-&gt;m_pDib-&gt;m_lpImage;</span><br><span class="line"></span><br><span class="line">lpSrc = (<span class="keyword">unsigned</span> <span class="keyword">char</span>*)pDoc-&gt;m_pDib-&gt;m_lpvColorTable;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">256</span>; i++)</span><br><span class="line">&#123;</span><br><span class="line">	*lpSrc = (<span class="keyword">unsigned</span> <span class="keyword">char</span>)i; lpSrc++;</span><br><span class="line">	*lpSrc = (<span class="keyword">unsigned</span> <span class="keyword">char</span>)i; lpSrc++;</span><br><span class="line">	*lpSrc = (<span class="keyword">unsigned</span> <span class="keyword">char</span>)i; lpSrc++;</span><br><span class="line">	*lpSrc = <span class="number">0</span>; lpSrc++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">memcpy</span>(m_pImage, lpNewDIBBits, lLineBytes * lHeight);</span><br><span class="line"><span class="keyword">delete</span>[]lpNewDIBBits;</span><br><span class="line"><span class="built_in">Invalidate</span>(<span class="literal">true</span>);</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><h6 id="View-h添加标识符声明"><a href="#View-h添加标识符声明" class="headerlink" title="View.h添加标识符声明"></a>View.h添加标识符声明</h6></li>
+</ul>
+<blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> TWOVALUE_H = <span class="number">0x80</span>;	<span class="comment">// =TWOVALUE_H: set 1</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> TWOVALUE_H = <span class="number">0x80</span>;	<span class="comment">// =TWOVALUE_H: set 1</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> EDGEPOINT = <span class="number">0x70</span>;     <span class="comment">//|= set 1, &amp; edge</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="3-、调试运行"><a href="#3-、调试运行" class="headerlink" title="3)、调试运行"></a>3)、调试运行</h4><ul>
+<li><h6 id="点击onmark处理好之后在点击twovalue"><a href="#点击onmark处理好之后在点击twovalue" class="headerlink" title="点击onmark处理好之后在点击twovalue"></a>点击onmark处理好之后在点击twovalue</h6></li>
+<li><h6 id="调试效果"><a href="#调试效果" class="headerlink" title="调试效果"></a>调试效果</h6></li>
+</ul>
+<blockquote>
+<p><img src="http://ww1.sinaimg.cn/large/0082vAI7ly1gs9t0m18v5j30ly0kdq43.jpg" alt="1.png"></p>
+</blockquote>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝快乐水<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ajoy2330.github.io/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/09/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%863/" class="archive-article-date">
-  	<time datetime="2021-07-09T08:21:30.327Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/09/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%863/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">细胞处理3</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/09/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%863/">细胞处理3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">细胞处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E4%BA%8C%E5%80%BC%E5%8C%96"><span class="toc-number">1.0.1.</span> <span class="toc-text">四、二值化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E3%80%81%E5%BB%BA%E7%AB%8B%E8%8F%9C%E5%8D%95%EF%BC%8C%E4%BA%8C%E5%80%BC%E5%8C%96%E9%80%89%E9%A1%B9"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">1)、建立菜单，二值化选项</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%B8%8E%E4%B8%89%E3%80%811-%E3%80%81%E7%9B%B8%E5%90%8C%E6%93%8D%E4%BD%9C"><span class="toc-number">1.0.1.1.0.1.</span> <span class="toc-text">与三、1)、相同操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E3%80%81%E4%BB%A3%E7%A0%81%E8%A1%A5%E5%85%85"><span class="toc-number">1.0.1.2.</span> <span class="toc-text">2)、代码补充</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9VIew-cpp%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.1.2.0.1.</span> <span class="toc-text">修改VIew.cpp代码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#View-h%E6%B7%BB%E5%8A%A0%E6%A0%87%E8%AF%86%E7%AC%A6%E5%A3%B0%E6%98%8E"><span class="toc-number">1.0.1.2.0.2.</span> <span class="toc-text">View.h添加标识符声明</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E3%80%81%E8%B0%83%E8%AF%95%E8%BF%90%E8%A1%8C"><span class="toc-number">1.0.1.3.</span> <span class="toc-text">3)、调试运行</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%82%B9%E5%87%BBonmark%E5%A4%84%E7%90%86%E5%A5%BD%E4%B9%8B%E5%90%8E%E5%9C%A8%E7%82%B9%E5%87%BBtwovalue"><span class="toc-number">1.0.1.3.0.1.</span> <span class="toc-text">点击onmark处理好之后在点击twovalue</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E8%B0%83%E8%AF%95%E6%95%88%E6%9E%9C"><span class="toc-number">1.0.1.3.0.2.</span> <span class="toc-text">调试效果</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%862/" class="archive-article-date">
-  	<time datetime="2021-07-08T14:14:06.686Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%862/">细胞处理2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%861/" class="archive-article-date">
-  	<time datetime="2021-07-08T14:14:06.684Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%861/">细胞处理1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/04/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-03T18:24:31.133Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/04/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://ajoy2330.github.io/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/",
+  owner: 'ajoy2330',
+  repo: 'ajoy2330.github.io',
+  oauth: {
+    client_id: 'f9ebcc49e3ad6f05432b',
+    client_secret: '8e3da9797cfbbeeb29282cf95b6ca7d2f5f965a5',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -370,8 +452,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
