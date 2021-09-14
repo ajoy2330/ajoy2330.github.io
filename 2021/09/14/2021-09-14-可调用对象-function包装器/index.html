@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ajoy2330.github.io">
-  <title>Ajoy_Blog</title>
+  <title>可调用对象 function包装器 | Ajoy_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="埋头苦干，干就完了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ajoy_Blog">
-<meta property="og:url" content="https://ajoy2330.github.io/index.html">
+  <meta name="description" content="可调用对象 function包装器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可调用对象 function包装器">
+<meta property="og:url" content="https://ajoy2330.github.io/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/index.html">
 <meta property="og:site_name" content="Ajoy_Blog">
-<meta property="og:description" content="埋头苦干，干就完了">
+<meta property="og:description" content="可调用对象 function包装器">
 <meta property="og:locale" content="zh_CH">
+<meta property="article:published_time" content="2021-09-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-14T14:01:07.021Z">
 <meta property="article:author" content="Ajoy_Blog">
-<meta property="article:tag" content="单片机菜鸡、嵌入式不嵌">
+<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Ajoy_Blog" type="application/atom+xml">
@@ -167,435 +169,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-2021-09-14-内嵌依赖" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-2021-09-14-可调用对象-function包装器" class="article article-type-post " itemscope itemprop="blogPost">
 <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E5%86%85%E5%B5%8C%E4%BE%9D%E8%B5%96/">内嵌依赖</a>
+    <h1 class="article-title" itemprop="name">
+      可调用对象 function包装器
     </h1>
   
 
 	<!--显示阅读次数-->
 	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/14/2021-09-14-%E5%86%85%E5%B5%8C%E4%BE%9D%E8%B5%96/" class="archive-article-date">
-  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="内嵌依赖"><a href="#内嵌依赖" class="headerlink" title="内嵌依赖"></a>内嵌依赖</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E5%86%85%E5%B5%8C%E4%BE%9D%E8%B5%96/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E5%86%85%E5%B5%8C%E4%BE%9D%E8%B5%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-14-模板显示实例化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E6%98%BE%E7%A4%BA%E5%AE%9E%E4%BE%8B%E5%8C%96/">模板显示实例化</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E6%98%BE%E7%A4%BA%E5%AE%9E%E4%BE%8B%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="模板显示实例化"><a href="#模板显示实例化" class="headerlink" title="模板显示实例化"></a>模板显示实例化</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E6%98%BE%E7%A4%BA%E5%AE%9E%E4%BE%8B%E5%8C%96/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E6%98%BE%E7%A4%BA%E5%AE%9E%E4%BE%8B%E5%8C%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-14-模板函数指针" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/">模板函数指针</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/" class="archive-article-date">
-  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="模板函数指针"><a href="#模板函数指针" class="headerlink" title="模板函数指针"></a>模板函数指针</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-14-模板的全特化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%85%A8%E7%89%B9%E5%8C%96/">模板的全特化</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%85%A8%E7%89%B9%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="模板的全特化"><a href="#模板的全特化" class="headerlink" title="模板的全特化"></a>模板的全特化</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%85%A8%E7%89%B9%E5%8C%96/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%85%A8%E7%89%B9%E5%8C%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-14-万能引用-decltype-&amp;&amp;-auto" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/">万能引用 decltype &amp;&amp; auto</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/" class="archive-article-date">
-  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="万能引用-decltype-amp-amp-auto"><a href="#万能引用-decltype-amp-amp-auto" class="headerlink" title="万能引用  decltype &amp;&amp; auto"></a>万能引用  decltype &amp;&amp; auto</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-14-可调用对象-function包装器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/">可调用对象 function包装器</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
+ 	 <br/>
+  	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+ 	 <span class="icon-sort"></span>
+  	<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+    	        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+ 	 </span>
+  	</a>
 	
 	<!--显示阅读次数完毕-->
         
@@ -611,12 +204,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="可调用对象-function包装器"><a href="#可调用对象-function包装器" class="headerlink" title="可调用对象 function包装器"></a>可调用对象 function包装器</h4>
-        
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/#more">more >></a>
-        
+        <h4 id="可调用对象-function包装器"><a href="#可调用对象-function包装器" class="headerlink" title="可调用对象 function包装器"></a>可调用对象 function包装器</h4><span id="more"></span>
+
+<h5 id="可调用对象"><a href="#可调用对象" class="headerlink" title="可调用对象"></a>可调用对象</h5><blockquote>
+<p>可调用对象：把函数抽象成一个对象，这个对象能够使用函数操作符<br>可调用对象：</p>
+<blockquote>
+<p>1.普通函数<br>2.函数指针<br>3.类成员函数和静态成员函数<br>4.成员函数指针怎<br>5.可以转换成函数指针的类<br>6.函数对象：在类中重载了函数调用的操作符（operator()）<br>7.lambda表达式   <a href=""></a>{};</p>
+<blockquote>
+<p>[]捕获列表：捕获外部作用域一定范围的变量</p>
+<p>[ ]: 不捕获任何变量，但不包括静态局部变量，lambda表达式可以直接使用<br>[&amp;]: 捕获外部作用域中所有变量，并作为引用在函数体里使用；<br>[=]: 捕获外部作用域中所有变量,并作为副本（传值）在函数体里使用；但不能修改外部作用域变量的值；<br>[this]: 一般用于类中，捕获当前类中的this指针，让lambda表达式与成员函数具有一样的权限，访问成员变量；（若使用&amp;/=，默认捕获this）</p>
+<p>[变量名]：捕获列表中列出的变量，多个变量用，分隔</p>
+<p>[=,&amp;变量名]：按值捕获外部变量，按引用捕获指定变量</p>
+<p>[=,&amp;变量名]：按值捕获外部变量，按引用捕获指定变量</p>
+<p>()形参列表<br>-&gt;返回值<br>auto func = <a href=""></a>{};  给lambda表达式加名字</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span>  <span class="comment">//普通函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> pfunc = <span class="built_in"><span class="keyword">int</span></span> (*)(<span class="keyword">int</span>, <span class="keyword">int</span>);  <span class="comment">//函数指针</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span>    //函数对象类</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">int</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span>  <span class="comment">//重载了函数运算符()</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a + b;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">operator</span> <span class="title">pfunc</span><span class="params">()</span>  <span class="comment">//对函数指针进行重载，能够通过函数指针去调用类</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;使用函数指针重载！&quot;</span> &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">return</span> add;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">add</span>(<span class="number">12</span>, <span class="number">12</span>);</span><br><span class="line"></span><br><span class="line">    pfunc ptr = add;</span><br><span class="line">    <span class="built_in">ptr</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    test t1;    <span class="comment">//通过一个类的对象调用某一个函数称为函数对象</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">t1</span>(<span class="number">1</span>, <span class="number">2</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    pfunc ptr2 = t1;     <span class="comment">//将一个类的对象转换成了一个函数指针</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in">ptr2</span>(<span class="number">2</span>, <span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//static int a;  //静态变量可以直接在lanmbda中使用</span></span><br><span class="line">    <span class="comment">//lambda表达式</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">auto</span> func = [=, &amp;a]() -&gt;<span class="keyword">int</span></span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;lambda表达式！&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; a + b &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> a++;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">func</span>();</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="function包装器"><a href="#function包装器" class="headerlink" title="function包装器"></a>function包装器</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;functional&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">operator</span><span class="params">()</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a)</span></span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//普通函数</span></span><br><span class="line">    function&lt;<span class="built_in"><span class="keyword">void</span></span>(<span class="keyword">int</span>)&gt; t1 = print;</span><br><span class="line">    <span class="built_in">t1</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//函数对象</span></span><br><span class="line">    demo d1;</span><br><span class="line">    function&lt;<span class="built_in"><span class="keyword">void</span></span>(<span class="keyword">int</span>)&gt; t2 = d1;</span><br><span class="line">    <span class="built_in">t2</span>(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//成员函数</span></span><br><span class="line">    function&lt;<span class="built_in"><span class="keyword">void</span></span>(demo2 ,<span class="keyword">int</span>)&gt; t3 = &amp;demo2::print;  <span class="comment">//类成员函数指针</span></span><br><span class="line">    demo2 d2;  <span class="comment">//需要特定对象进行调用</span></span><br><span class="line">    <span class="built_in">t3</span>(d2, <span class="number">3</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//lambda表达式</span></span><br><span class="line">    function&lt;<span class="built_in"><span class="keyword">void</span></span>(<span class="keyword">int</span>)&gt; t4 = [](<span class="keyword">int</span> a)&#123;cout &lt;&lt; a &lt;&lt; endl;&#125;;</span><br><span class="line">    <span class="built_in">t4</span>(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝快乐水<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -636,16 +277,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ajoy2330.github.io/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          万能引用 decltype &amp;&amp; auto
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数模板</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -660,349 +369,48 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-13-函数模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/">函数模板</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
-  	<time datetime="2021-09-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="函数模板"><a href="#函数模板" class="headerlink" title="函数模板"></a>函数模板</h4>
-        
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">可调用对象 function包装器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.1.</span> <span class="toc-text">可调用对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#function%E5%8C%85%E8%A3%85%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">function包装器</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-2021-09-13-类模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/13/2021-09-13-%E7%B1%BB%E6%A8%A1%E6%9D%BF/">类模板</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/13/2021-09-13-%E7%B1%BB%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
-  	<time datetime="2021-09-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="类模板"><a href="#类模板" class="headerlink" title="类模板"></a>类模板</h4>
-        
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E7%B1%BB%E6%A8%A1%E6%9D%BF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E7%B1%BB%E6%A8%A1%E6%9D%BF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-13-继承-模板" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/13/2021-09-13-%E7%BB%A7%E6%89%BF-%E6%A8%A1%E6%9D%BF/">继承 模板</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/13/2021-09-13-%E7%BB%A7%E6%89%BF-%E6%A8%A1%E6%9D%BF/" class="archive-article-date">
-  	<time datetime="2021-09-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-13</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="继承-模板（实现栈-队列）"><a href="#继承-模板（实现栈-队列）" class="headerlink" title="继承 模板（实现栈  队列）"></a>继承 模板（实现栈  队列）</h4>
-        
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E7%BB%A7%E6%89%BF-%E6%A8%A1%E6%9D%BF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/13/2021-09-13-%E7%BB%A7%E6%89%BF-%E6%A8%A1%E6%9D%BF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2021-09-12-虚继承" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-<div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/09/12/2021-09-12-%E8%99%9A%E7%BB%A7%E6%89%BF/">虚继承</a>
-    </h1>
-  
-
-	<!--显示阅读次数-->
-	
-	<!--显示阅读次数完毕-->
-        
-        <a href="/2021/09/12/2021-09-12-%E8%99%9A%E7%BB%A7%E6%89%BF/" class="archive-article-date">
-  	<time datetime="2021-09-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-12</time>
-</a>
-        <!-- 需要添加的位置 -->
-        <!-- 开始添加字数统计-->
-       	 
-       	 <!-- 添加完成 -->
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="虚继承"><a href="#虚继承" class="headerlink" title="虚继承"></a>虚继承</h4>
-        
-          <a class="article-more-a" href="/2021/09/12/2021-09-12-%E8%99%9A%E7%BB%A7%E6%89%BF/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/09/12/2021-09-12-%E8%99%9A%E7%BB%A7%E6%89%BF/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://ajoy2330.github.io/2021/09/14/2021-09-14-%E5%8F%AF%E8%B0%83%E7%94%A8%E5%AF%B9%E8%B1%A1-function%E5%8C%85%E8%A3%85%E5%99%A8/",
+  owner: 'ajoy2330',
+  repo: 'ajoy2330.github.io',
+  oauth: {
+    client_id: 'f9ebcc49e3ad6f05432b',
+    client_secret: '8e3da9797cfbbeeb29282cf95b6ca7d2f5f965a5',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -1055,8 +463,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
