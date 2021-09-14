@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://ajoy2330.github.io">
-  <title>Archives: 2021 | Ajoy_Blog</title>
+  <title>万能引用 decltype &amp;&amp; auto | Ajoy_Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="埋头苦干，干就完了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ajoy_Blog">
-<meta property="og:url" content="https://ajoy2330.github.io/archives/2021/page/3/index.html">
+  <meta name="description" content="万能引用  decltype &amp;&amp; auto">
+<meta property="og:type" content="article">
+<meta property="og:title" content="万能引用 decltype &amp;&amp; auto">
+<meta property="og:url" content="https://ajoy2330.github.io/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/index.html">
 <meta property="og:site_name" content="Ajoy_Blog">
-<meta property="og:description" content="埋头苦干，干就完了">
+<meta property="og:description" content="万能引用  decltype &amp;&amp; auto">
 <meta property="og:locale" content="zh_CH">
+<meta property="article:published_time" content="2021-09-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-14T12:25:13.850Z">
 <meta property="article:author" content="Ajoy_Blog">
-<meta property="article:tag" content="单片机菜鸡、嵌入式不嵌">
+<meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Ajoy_Blog" type="application/atom+xml">
@@ -167,231 +169,250 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2021-09-14-万能引用-decltype-&amp;&amp;-auto" class="article article-type-post " itemscope itemprop="blogPost">
+<div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      万能引用 decltype &amp;&amp; auto
+    </h1>
+  
+
+	<!--显示阅读次数-->
+	
+ 	 <br/>
+  	<a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+ 	 <span class="icon-sort"></span>
+  	<span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+    	        阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+ 	 </span>
+  	</a>
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/" class="archive-article-date">
+  	<time datetime="2021-09-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-14</time>
+</a>
+        <!-- 需要添加的位置 -->
+        <!-- 开始添加字数统计-->
+       	 
+       	 <!-- 添加完成 -->
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="万能引用-decltype-amp-amp-auto"><a href="#万能引用-decltype-amp-amp-auto" class="headerlink" title="万能引用  decltype &amp;&amp; auto"></a>万能引用  decltype &amp;&amp; auto</h4><span id="more"></span>
+
+<h5 id="万能引用"><a href="#万能引用" class="headerlink" title="万能引用"></a>万能引用</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">(T &amp;&amp;a)</span>     <span class="comment">//&amp;&amp;右值引用   把右值变成一个左值</span></span></span><br><span class="line"><span class="function"></span>&#123;                    <span class="comment">//万能引用格式：&amp;&amp;符号紧贴着模板 T 出现</span></span><br><span class="line">    cout &lt;&lt; a &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="built_in">func</span>(<span class="number">10</span>);    <span class="comment">//普通引用的局限性，不能接受右值（没有内存的值）</span></span><br><span class="line">                 <span class="comment">//万能引用：将右值像左值一样被模板接收传递</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="decltype-amp-amp-auto"><a href="#decltype-amp-amp-auto" class="headerlink" title="decltype &amp;&amp; auto"></a>decltype &amp;&amp; auto</h5><blockquote>
+<p>auto关键字推导特点：  1.忽略迁至修饰符：const，vola</p>
+<p>​                                           2.auto推不出数组，最多推到指针</p>
+<p>​                                          3.auto不能出现在模板里面</p>
+<p>​                                          4.不能用于非静态成员变量</p>
+<p>​                                          5.编译时推导</p>
+<p>​                                          6.必须要初始化</p>
+<p>decltype能推到的类型：1.变量</p>
+<p>​                                          2.表达式</p>
+<p>​                                          3.函数的返回值</p>
+<p>​                                          4.解指针时会推出引用类型</p>
+<p>auto vs decltype </p>
+<p>1.auto不保留原数据的类型前置属性（const， &amp;）</p>
+<p>2.解指针时auto推出原数据类型，decltype推出原数据类型的引用</p>
+<p>3.auto会执行表达式，decltype只推断类型，不进行执行</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;typeinfo&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">job</span>&#123;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;调用add！&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">decltype</span>(a + <span class="number">1.2</span>) x;  <span class="comment">//用表达式进行类型判断，返回给该类型</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(x).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">decltype</span>(<span class="built_in">add</span>(<span class="number">1</span>, <span class="number">2</span>)) x1;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(x1).<span class="built_in">name</span>() &lt;&lt; endl;  <span class="comment">//对函数的返回值进行判断，但是不会真正调用函数</span></span><br><span class="line"></span><br><span class="line">    job obj;</span><br><span class="line">    <span class="keyword">auto</span> p = &amp;obj;</span><br><span class="line">    <span class="keyword">decltype</span>(*p) x3 = obj;  <span class="comment">//解指针时会推出引用</span></span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(x3).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> *p1 = &amp;a;</span><br><span class="line">    <span class="keyword">decltype</span>(*p1) f = a;</span><br><span class="line">    cout &lt;&lt; <span class="built_in"><span class="keyword">typeid</span></span>(*p1).<span class="built_in">name</span>() &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝快乐水<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/" class="archive-article-date">
-  	<time datetime="2021-07-09T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/10/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%864/">细胞处理4</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">细胞处理</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://ajoy2330.github.io/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&&-auto/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/09/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%863/" class="archive-article-date">
-  	<time datetime="2021-07-08T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-09</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/09/14/2021-09-14-%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%85%A8%E7%89%B9%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          模板的全特化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/13/2021-09-13-%E5%87%BD%E6%95%B0%E6%A8%A1%E6%9D%BF/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数模板</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/09/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%863/">细胞处理3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">细胞处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-amp-amp-auto"><span class="toc-number">1.</span> <span class="toc-text">万能引用  decltype &amp;&amp; auto</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">万能引用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#decltype-amp-amp-auto"><span class="toc-number">1.2.</span> <span class="toc-text">decltype &amp;&amp; auto</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%862/" class="archive-article-date">
-  	<time datetime="2021-07-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-08</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/08/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%862/">细胞处理2</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">细胞处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/07/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%861/" class="archive-article-date">
-  	<time datetime="2021-07-06T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/07/%E7%BB%86%E8%83%9E%E5%A4%84%E7%90%861/">细胞处理1</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">数字图像处理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">细胞处理</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/05/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-04T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/05/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hello World</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2021/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2021/">1</a><a class="page-number" href="/archives/2021/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://ajoy2330.github.io/2021/09/14/2021-09-14-%E4%B8%87%E8%83%BD%E5%BC%95%E7%94%A8-decltype-&amp;&amp;-auto/",
+  owner: 'ajoy2330',
+  repo: 'ajoy2330.github.io',
+  oauth: {
+    client_id: 'f9ebcc49e3ad6f05432b',
+    client_secret: '8e3da9797cfbbeeb29282cf95b6ca7d2f5f965a5',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -445,8 +466,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
